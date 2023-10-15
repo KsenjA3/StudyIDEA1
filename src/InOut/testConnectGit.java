@@ -6,5 +6,6 @@ public class testConnectGit {
         System.out.println("еще один comit ");
         System.out.println("еще один comit2 ");
         System.out.println("еще один comit3 ");
+        System.out.println("еще один comit4 ");
     }
 }
