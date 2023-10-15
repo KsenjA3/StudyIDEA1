@@ -8,8 +8,8 @@ public class DatTest {
         double d = 10.2331;
         boolean b= true;
 // не получается разобраться с кодировкой в файле кракозяблы
-        try (var dataOut = new DataOutputStream (new    FileOutputStream ("testdat.txt")))
-//														PrintStream ("testdat.txt", "UTF-8")))
+         try (var dataOut = new DataOutputStream (new  //  FileOutputStream ("testdat.txt")))
+														PrintStream ("testdat.txt", "UTF-8")))
         {
             System.out.println ("Записано: "+i);
             dataOut.writeInt(i);
@@ -21,6 +21,7 @@ public class DatTest {
             dataOut.writeUTF(sR);
             System.out.println ("Записано: "+sE);
             dataOut.writeUTF(sE);
+            System.out.println ();
         }catch (IOException e) {
             System.out.println ("Ошибка при записи");
             return;
