@@ -5,5 +5,6 @@ public class testConnectGit2 {
         System.out.println("Прочитано: ");
         System.out.println("еще один comit ");
         System.out.println("BranchNew comit ");
+        System.out.println("BranchNew comit  где?");
     }
 }
