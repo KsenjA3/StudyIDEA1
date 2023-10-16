@@ -8,5 +8,6 @@ public class testConnectGit {
         System.out.println("еще один comit3 ");
         System.out.println("еще один comit4 ");
         System.out.println("commit copy StudyIDEA1 ");
+        System.out.println("branch1 commit ");
     }
 }
