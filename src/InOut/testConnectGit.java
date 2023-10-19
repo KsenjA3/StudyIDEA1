@@ -10,5 +10,6 @@ public class testConnectGit {
         System.out.println("еще один comit3 ");
 
         System.out.println("for remote 1 ");
+        System.out.println("for remote 2 ");
     }
 }
