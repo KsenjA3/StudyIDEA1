@@ -1,15 +1,14 @@
 package InOut;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
-import java.nio.file.Files;
-import java.nio.file.InvalidPathException;
-import java.nio.file.Paths;
+import java.io.*;
+//import java.nio.*;
+import java.nio.file.*;
+import java.nio.channels.*;
 
 public class MappedChannelRead {
 
     public static void main(String[] args) {
+        System.out.println("проверка консоли" );
 
         try (FileChannel fChan = (FileChannel)   Files.newByteChannel(Paths.get("pass.txt"))) {
         // получить размер файла
