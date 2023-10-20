@@ -3,12 +3,16 @@ package InOut;
 import java.io.*;
 import java.nio.*;
 import java.nio.file.*;
-import java.nio.channels.*;
+//import java.nio.channels.*;
+import java.nio.charset.Charset;
 
 public class ExplicitChannelRead {
     public static void main(String[] args) {
+        System.out.println(Charset.defaultCharset().displayName());
+
+
         int count;
-        boolean b;
+ //       boolean b;
 
         try (var fChan = Files.newByteChannel(Paths.get("pass.txt"))) {
 // выделить память под буфер
