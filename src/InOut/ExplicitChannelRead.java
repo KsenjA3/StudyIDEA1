@@ -12,11 +12,11 @@ public class ExplicitChannelRead {
 
 
         int count;
- //       boolean b;
 
         try (var fChan = Files.newByteChannel(Paths.get("pass.txt"))) {
 // выделить память под буфер
             var mBuf = ByteBuffer.allocate(128);
+
             do {
 //читать данные из файла в буфер
                 count = fChan.read(mBuf);
@@ -27,7 +27,14 @@ public class ExplicitChannelRead {
                 }
 
             } while (count != -1);
-            System.out.println();
+            System.out.println("\n");
+
+            mBuf.rewind();
+            Charset cset =Charset.forName("UTF-8");
+            CharBuffer cBuf = cset.decode(mBuf);
+            System.out.println(cBuf);
+            System.out.println("\n");
+
         } catch (InvalidPathException e) {
             System.out.println("Ошибка указания пути" + e);
         } catch (IOException e) {
