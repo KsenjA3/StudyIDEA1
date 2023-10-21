@@ -3,26 +3,30 @@ package InOut;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.*;
-import java.nio.ByteBuffer.*;
-import java.nio.CharBuffer.*;
+
 import java.io.*;
 
 public class Encoding {
     public static void main (String [] args) throws IOException {
 
-        final  String ENCODIND_WIN1251 = "windows-1251";
-        final  String ENCODIND_UTF8 = "UTF-8";
-        String str = "456 ghj абвгдеёжзиклмнопрстуфхцчшщьыъэюяАБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ";
+        int chi=0;
+        String str = "456 ghj л";
 
         Charset cset =Charset.forName("windows-1251");
+
+
         ByteBuffer buf = cset.encode(str);
 
         String strCode = buf.toString();
         System.out.println (strCode);
 
         byte [] byteCode =buf.array();
-        for (int i=0; i<byteCode.length; i++)
-        System.out.print ((char) byteCode[i]);
+        for (int i=0; i<byteCode.length; i++){
+          if (byteCode[i]<0) chi= 1104 +byteCode[i];
+          if (byteCode[i]>=0) chi= byteCode[i];
+            System.out.println (chi+ " + " +(char) chi);
+        }
+
         System.out.println ("\n");
 
         ByteBuffer decodeBuf =ByteBuffer.wrap(byteCode);
@@ -31,8 +35,13 @@ public class Encoding {
         String strDecode = cBuf.toString();
         System.out.println (strDecode);
         byte [] byteDecode =buf.array();
-        for (int i=0; i<byteDecode.length; i++)
-            System.out.print ((char) byteDecode[i]);
+
+        for (int i=0; i<byteDecode.length; i++){
+            if (byteDecode[i]<0) chi= 1104 +byteDecode[i];
+            if (byteDecode[i]>=0) chi= byteDecode[i];
+            System.out.print ((char) chi);
+        }
+
         System.out.println ();
     }
 }
