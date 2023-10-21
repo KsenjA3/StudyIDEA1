@@ -10,8 +10,7 @@ import java.io.*;
 public class Encoding {
     public static void main (String [] args) throws IOException {
 
-        final  String ENCODIND_WIN1251 = "windows-1251";
-        final  String ENCODIND_UTF8 = "UTF-8";
+
         String str = "456 ghj абвгдеёжзиклмнопрстуфхцчшщьыъэюяАБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ";
 
         Charset cset =Charset.forName("windows-1251");
