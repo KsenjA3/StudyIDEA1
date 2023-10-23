@@ -1,16 +1,16 @@
 package InOut;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
+
 
 public class BufTest {
     public static void main(String[] args) throws IOException{
         String inFile;
 
         try (var bufOut = new BufferedWriter (new OutputStreamWriter
-                        (new FileOutputStream("testbuf.txt"), StandardCharsets.UTF_8))) {
+                        (new FileOutputStream("testbuf.txt"),"UTF-8" ))) {
             do {
-                var bufIn = new BufferedReader( new InputStreamReader(System.in, StandardCharsets.UTF_8));
+                var bufIn = new BufferedReader( new InputStreamReader(System.in, "UTF-8"));
                 inFile = bufIn.readLine();
                 System.out.println("Введено: " + inFile);
             bufOut.write(inFile+"\n");
