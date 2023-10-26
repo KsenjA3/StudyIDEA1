@@ -13,16 +13,18 @@ public class NIOstreamWrite {
             do {
                 var bufIn = new BufferedReader( new InputStreamReader(System.in, "windows-1251"));
                 inFile = bufIn.read();
-                System.out.println("Ð’Ð²ÐµÐ´ÐµÐ½Ð¾: " + inFile);
-
-                fout.write(inFile);
-                fout.write(20);
+                System.out.println("Ââåäåíî: " + inFile);
+                int in=10;
+                if (inFile>256)  in=inFile-848;
+                if (inFile<256)  in=inFile;
+                fout.write(in);
+                fout.write(10);
 
             }while (inFile!=115);
 
             System.out.println();
         } catch (IOException e) {
-            System.out.println("ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð·Ð°Ð¿Ð¸ÑÐ¸");
+            System.out.println("Îøèáêà ïðè çàïèñè");
         }
 
 
